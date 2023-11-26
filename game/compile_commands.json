@@ -1,0 +1,28 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-D_DEFAULT_SOURCE",
+      "-Wno-missing-braces",
+      "-Wunused-result",
+      "-O2",
+      "-D_DEFAULT_SOURCE",
+      "-I",
+      "inc/",
+      "-I.",
+      "-I/home/seger/projects/raylib/src",
+      "-I/home/seger/projects/raylib/src/external",
+      "-I/usr/local/include",
+      "-I/home/seger/projects/raylib/src/external/glfw/include",
+      "-DPLATFORM_DESKTOP",
+      "-o",
+      "obj/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/home/seger/projects/raylib/game",
+    "file": "/home/seger/projects/raylib/game/src/main.cpp",
+    "output": "/home/seger/projects/raylib/game/obj/main.o"
+  }
+]
