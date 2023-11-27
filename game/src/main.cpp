@@ -14,14 +14,15 @@ private:
 };
 
 int addNumbers(int a, int b) { return a + b; }
+
+const int screenWidth = 800;
+const int screenHeight = 450;
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
 int main(void) {
     // Initialization
     //---------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
 
     SetConfigFlags(FLAG_MSAA_4X_HINT);
     InitWindow(screenWidth, screenHeight,

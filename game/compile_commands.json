@@ -2,27 +2,51 @@
   {
     "arguments": [
       "/usr/bin/g++",
-      "-c",
       "-Wall",
       "-D_DEFAULT_SOURCE",
       "-Wno-missing-braces",
       "-Wunused-result",
       "-O2",
       "-D_DEFAULT_SOURCE",
-      "-I",
-      "inc/",
+      "-Iinc/",
+      "-Iinc/Entities/",
       "-I.",
-      "-I/home/seger/projects/raylib/src",
-      "-I/home/seger/projects/raylib/src/external",
+      "-I/home/seger/projects/RaylibTowerDefense/src",
+      "-I/home/seger/projects/RaylibTowerDefense/src/external",
       "-I/usr/local/include",
-      "-I/home/seger/projects/raylib/src/external/glfw/include",
-      "-DPLATFORM_DESKTOP",
+      "-I/home/seger/projects/RaylibTowerDefense/src/external/glfw/include",
+      "-c",
       "-o",
       "obj/main.o",
       "src/main.cpp"
     ],
-    "directory": "/home/seger/projects/raylib/game",
-    "file": "/home/seger/projects/raylib/game/src/main.cpp",
-    "output": "/home/seger/projects/raylib/game/obj/main.o"
+    "directory": "/home/seger/projects/RaylibTowerDefense/game",
+    "file": "/home/seger/projects/RaylibTowerDefense/game/src/main.cpp",
+    "output": "/home/seger/projects/RaylibTowerDefense/game/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-D_DEFAULT_SOURCE",
+      "-Wno-missing-braces",
+      "-Wunused-result",
+      "-O2",
+      "-D_DEFAULT_SOURCE",
+      "-Iinc/",
+      "-Iinc/Entities/",
+      "-I.",
+      "-I/home/seger/projects/RaylibTowerDefense/src",
+      "-I/home/seger/projects/RaylibTowerDefense/src/external",
+      "-I/usr/local/include",
+      "-I/home/seger/projects/RaylibTowerDefense/src/external/glfw/include",
+      "-c",
+      "-o",
+      "obj/Entity.o",
+      "src/Entities/Entity.cpp"
+    ],
+    "directory": "/home/seger/projects/RaylibTowerDefense/game",
+    "file": "/home/seger/projects/RaylibTowerDefense/game/src/Entities/Entity.cpp",
+    "output": "/home/seger/projects/RaylibTowerDefense/game/obj/Entity.o"
   }
 ]

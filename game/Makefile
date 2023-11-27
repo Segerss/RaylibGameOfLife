@@ -469,7 +469,7 @@ CURRENT_MAKEFILE = $(lastword $(MAKEFILE_LIST))
 #------------------------------------------------------------------------------------------------
 # Default target entry
 #
-all: clean_obj GameExecutable 
+all: clean_obj GameExecutable clean_obj
 
 # Makefile for a C++ project
 
