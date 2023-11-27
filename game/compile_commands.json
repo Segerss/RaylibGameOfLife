@@ -9,20 +9,20 @@
       "-O2",
       "-D_DEFAULT_SOURCE",
       "-Iinc/",
-      "-Iinc/Entities/",
+      "-Iinc/Cell/",
       "-I.",
-      "-I/home/seger/projects/RaylibTowerDefense/src",
-      "-I/home/seger/projects/RaylibTowerDefense/src/external",
+      "-I/home/seger/projects/RaylibGameOfLife/src",
+      "-I/home/seger/projects/RaylibGameOfLife/src/external",
       "-I/usr/local/include",
-      "-I/home/seger/projects/RaylibTowerDefense/src/external/glfw/include",
+      "-I/home/seger/projects/RaylibGameOfLife/src/external/glfw/include",
       "-c",
       "-o",
       "obj/main.o",
       "src/main.cpp"
     ],
-    "directory": "/home/seger/projects/RaylibTowerDefense/game",
-    "file": "/home/seger/projects/RaylibTowerDefense/game/src/main.cpp",
-    "output": "/home/seger/projects/RaylibTowerDefense/game/obj/main.o"
+    "directory": "/home/seger/projects/RaylibGameOfLife/game",
+    "file": "/home/seger/projects/RaylibGameOfLife/game/src/main.cpp",
+    "output": "/home/seger/projects/RaylibGameOfLife/game/obj/main.o"
   },
   {
     "arguments": [
@@ -34,19 +34,19 @@
       "-O2",
       "-D_DEFAULT_SOURCE",
       "-Iinc/",
-      "-Iinc/Entities/",
+      "-Iinc/Cell/",
       "-I.",
-      "-I/home/seger/projects/RaylibTowerDefense/src",
-      "-I/home/seger/projects/RaylibTowerDefense/src/external",
+      "-I/home/seger/projects/RaylibGameOfLife/src",
+      "-I/home/seger/projects/RaylibGameOfLife/src/external",
       "-I/usr/local/include",
-      "-I/home/seger/projects/RaylibTowerDefense/src/external/glfw/include",
+      "-I/home/seger/projects/RaylibGameOfLife/src/external/glfw/include",
       "-c",
       "-o",
-      "obj/Entity.o",
-      "src/Entities/Entity.cpp"
+      "obj/Cell.o",
+      "src/Cell/Cell.cpp"
     ],
-    "directory": "/home/seger/projects/RaylibTowerDefense/game",
-    "file": "/home/seger/projects/RaylibTowerDefense/game/src/Entities/Entity.cpp",
-    "output": "/home/seger/projects/RaylibTowerDefense/game/obj/Entity.o"
+    "directory": "/home/seger/projects/RaylibGameOfLife/game",
+    "file": "/home/seger/projects/RaylibGameOfLife/game/src/Cell/Cell.cpp",
+    "output": "/home/seger/projects/RaylibGameOfLife/game/obj/Cell.o"
   }
 ]

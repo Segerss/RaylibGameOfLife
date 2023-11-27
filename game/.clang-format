@@ -5,6 +5,7 @@ IndentWidth: 4
 
 Language: Cpp
 # Force pointers to the type for C++.
+ColumnLimit: 120
 DerivePointerAlignment: false
 PointerAlignment: Left
 #IndentAccessModifiers: false
