@@ -48,10 +48,17 @@ void GridDraw() {
 }
 
 bool validGridPosition(int posX, int posY) {
-    if (posX < 0 || posX >= rows) {
+    // if (posX < 0 || posX >= rows) {
+    // return false;
+    //}
+    // if (posY < 0 || posY >= cols) {
+    // return false;
+    //}
+    if (posX < 0 || posX >= cols) {
         return false;
     }
-    if (posY < 0 || posY >= cols) {
+
+    if (posY < 0 || posY >= rows) {
         return false;
     }
     return true;
@@ -59,26 +66,28 @@ bool validGridPosition(int posX, int posY) {
 
 int numberAliveSurroundingCells(Cell gridToCheck[rows][cols], Cell cellToCheck) {
     int totalAlive = 0;
-    int checkX = cellToCheck.getX();
-    int checkY = cellToCheck.getY();
+
     for (int r = -1; r <= 1; r++) {
         for (int c = -1; c <= 1; c++) {
-            // if (validGridPosition(cellToCheck.getX() + r, cellToCheck.getY() + c)) {
-            // if (grid[cellToCheck.getY() + r][cellToCheck.getX() + c].isAlive()) {
-            // totalAlive++;
-            // }
-            // }
-            if (checkX + c < 0 || checkX + c >= cols) {
+            if (r == 0 && c == 0) {
                 continue;
             }
-
-            if (checkY + r < 0 || checkY + r >= rows) {
-                continue;
+            if (validGridPosition(cellToCheck.getX() + c, cellToCheck.getY() + r)) {
+                if (grid[cellToCheck.getY() + r][cellToCheck.getX() + c].isAlive()) {
+                    totalAlive++;
+                }
             }
+            // if (checkX + c < 0 || checkX + c >= cols) {
+            // continue;
+            //}
 
-            if (grid[cellToCheck.getY() + r][cellToCheck.getX() + c].isAlive()) {
-                totalAlive++;
-            }
+            // if (checkY + r < 0 || checkY + r >= rows) {
+            // continue;
+            //}
+
+            //            if (grid[cellToCheck.getY() + r][cellToCheck.getX() + c].isAlive()) {
+            //              totalAlive++;
+            //         }
         }
     }
     return totalAlive;
@@ -104,11 +113,36 @@ void runGame() {
                           << std::endl;
             }
 
-            if (amountAlive > 3) {
-                currentCell->setState(true);
+            if (currentCell->isAlive()) {
+                if (amountAlive < 2) {
+                    curGrid[r][c].setState(false);
+                } else if (amountAlive == 2 || amountAlive == 3) {
+                    curGrid[r][c].setState(true);
+                } else if (amountAlive > 3) {
+                    curGrid[r][c].setState(false);
+                }
+            } else {
+                if (amountAlive == 3) {
+                    curGrid[r][c].setState(true);
+                }
             }
+
+            // if(amountAlive < 2){
+            // curGrid[r][c].setState(false);
+            //}else if (currentCell->isAlive() &&
+
+            // if (amountAlive > 3) {
+            // currentCell->setState(true);
+            //}
         }
     }
+
+    for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+            grid[r][c].setState(curGrid[r][c].isAlive());
+        }
+    }
+
     std::cout << "end of game" << std::endl;
 }
 //------------------------------------------------------------------------------------
@@ -154,8 +188,8 @@ int main(void) {
         if (!paused) {
             static int counter = 0;
             counter++;
-            if (counter % 60 == 0)
-                runGame();
+            // if (counter % 30 == 0)
+            runGame();
         }
 
         BeginDrawing();
@@ -177,7 +211,7 @@ int main(void) {
         //}
         //}
 
-        // DrawFPS(10, 10);
+        DrawFPS(10, 10);
 
         EndDrawing();
         //-----------------------------------------------------
