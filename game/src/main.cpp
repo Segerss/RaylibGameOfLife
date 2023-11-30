@@ -19,16 +19,25 @@ Cell grid[rows][cols];
 void CellDraw(Cell cell) {
     // std::cout << "Draw " << cell.getX() << ", " << cell.getY() << std::endl;
 
-    struct Color cellColor;
+    Color cellColor;
+
+    Color deadBlockColor = {.r = 46, .g = 46, .b = 46, .a = 0xFF};
 
     if (cell.isAlive()) {
         cellColor = RED;
     } else {
-        cellColor = LIGHTGRAY;
+        cellColor = deadBlockColor;
     }
 
-    DrawRectangle(cell.getX() * cell.getWidth(), cell.getY() * cell.getHeight(), cell.getWidth() - 1,
-                  cell.getHeight() - 1, cellColor);
+    struct Rectangle rec = {.x = (float)(cell.getX() * cell.getWidth()),
+                            .y = (float)(cell.getY() * cell.getHeight()),
+                            .width = (float)(cell.getWidth() - 1),
+                            .height = (float)(cell.getHeight() - 1)};
+
+    DrawRectangleRounded(rec, 0.4, 10, cellColor);
+
+    // DrawRectangle(cell.getX() * cell.getWidth(), cell.getY() * cell.getHeight(), cell.getWidth() - 1,
+    // cell.getHeight() - 1, cellColor);
 }
 
 bool coordinatesInCell(Cell cell, Vector2 pos) {
@@ -194,7 +203,7 @@ int main(void) {
 
         BeginDrawing();
 
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
         // DrawText("PAUSED", 350, 200, 30, GRAY);
 
